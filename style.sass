@@ -1,9 +1,9 @@
-$MainColor: #564891
-$MainShadow: #9b9aeb
-$secondaryColor: #4459b1
-$secondaryShadow: #c4811c
-$complementaryLight: #b0bffc
-$complementaryShadow: #07175e
+$MainColor: #3f0fb7
+$MainShadow: #320c92
+$secondaryColor: #653fc5
+$secondaryShadow: #4c26ac
+$MainAccent: #ece7f8
+$SecondaryAccent: #9F87DB
 
 @mixin flex()
     display: flex
@@ -16,18 +16,38 @@ $complementaryShadow: #07175e
     box-sizing: border-box
 
 body
+    position: relative
     font-size: 16px
     font-family: 'Source Code Pro', monospace
-    height: 100vh
+    line-height: 1.8em
+    letter-spacing: .02em
     overflow-x: hidden
+
+body::after
+    content: ''
+    display: block
+    height: 100px
 
 a:-webkit-any-link
     text-decoration: none
-    color: black
+    color: $MainAccent
+
+#loader
+    height: 100vh
+    width: 100%
+    position: fixed
+    display: grid
+    place-items: center
+    background-color: #ece7f8
+    z-index: 100
+    
+    img
+        animation: spin 2s ease infinite
 
 .header__nav
     position: fixed
-    background-color: $secondaryColor
+    top: 0
+    background-color: $MainColor
     width: 100%
     z-index: 3
 
@@ -36,12 +56,20 @@ a:-webkit-any-link
 
         align-items: center
         justify-content: space-between
-        padding: 8px 16px
+        padding: 16px 32px
+
+        .logo
+            position: relative
+
+        .logo:hover
+            transform: rotateZ(27deg)
+            transition: 0.3s linear
 
         .logo__label
-            color: $complementaryLight
+            font-family: 'Cinzel', serif
+            color: $MainAccent
             float: right
-            margin-top: 16px
+            margin-top: 18px
             margin-left: 16px
 
         ul
@@ -53,17 +81,18 @@ a:-webkit-any-link
 
             li
                 display: inline-block
+                padding: 0 8px
 
                 a, .dropdown__btn
                     display: block
-                    color: $complementaryLight
+                    color: $MainAccent
                     text-align: center
                     float: left
                     height: 40px
                     line-height: 40px
 
                 a:hover 
-                    color: $MainShadow
+                    color: $SecondaryAccent
                     font-size: 1.25em
                     font-weight: 500
         
@@ -74,7 +103,7 @@ a:-webkit-any-link
 
     width: 100%
     padding: 0 0 20px 0
-    background-color: $complementaryLight
+    background-color: $MainAccent
     justify-content: center
 
     .main__container
@@ -100,7 +129,7 @@ a:-webkit-any-link
                 display: flex
                 flex-direction: column
                 height: calc( 100vh / 1.3)
-                background-color: #445ab1bb
+                background-color: #653fc5bb
                 width: 75%
                 justify-content: center
                 transition: .7s ease-out
@@ -114,52 +143,50 @@ a:-webkit-any-link
                 .jumbotron__cta
                     visibility: hidden
                     font-size: 16px
-                    width: 150px
-                    height: 40px
-                    color: $secondaryColor
-                    background: #445ab1bb
-                    border: $secondaryColor solid 2px
+                    background: none
+                    border: $secondaryShadow solid 3px
                     cursor: pointer
                     
 
                     a
                         display: block
-                        color: $MainShadow
-                        padding: 8px 16px
+                        color: $secondaryShadow
+                        padding: 18px 32px
 
                 .jumbotron__cta:hover
-                    background-color: $MainShadow
+                    background-color: $secondaryShadow
+                    border: $secondaryColor solid 2px
                         
                     a
-                        color: $secondaryColor
+                        color: $MainAccent
 
                 .jumbotron__cta:active
-                    background-color: $secondaryColor
-                    box-shadow: 0 0 5px 3px $complementaryShadow
+                    background-color: $secondaryShadow
+                    box-shadow: 0 0 5px 3px $MainColor
 
                     a
                         color: $MainShadow
 
             .jumbotron__hello
                 font-size: 3em
-                color: $complementaryLight
+                color: $MainAccent
 
             .jumbotron__tittle
                 display: block
-                color: $complementaryLight
+                color: $MainAccent
 
             .jumbotron__tittle::before
-                content: "I'm "
+                content: "I'm Nahuel Lopez"
 
             .jumbotron__subtittle
                 display: block
-                color: $complementaryLight
+                color: $MainAccent
                 font-style: italic
 
         .jumbotron:hover
             .jumbotron__slide
                 width: 50%
-                background-color: #4459b1
+                background-color: #4c26ac
 
             .jumbotron__cta
                 visibility: visible
@@ -167,10 +194,12 @@ a:-webkit-any-link
             .jumbotron__hello, .jumbotron__subtittle
                 visibility: hidden
 
-            .jumbotron__tittle
-                font-size: 3em
             .jumbotron__tittle::before
-                display: none 
+                display: block
+                font-size: 48px
+                font-style: italic
+                content: '¡lets take a look!'
+
 
     .main__section
         display: flex
@@ -182,47 +211,223 @@ a:-webkit-any-link
         .section__tittle
             margin-top: 32px 
             font-size: 2em
-            color: $secondaryColor
+            color: $secondaryShadow
 
         .section__content
-            margin: 16px 8px
-            font: 1.25em
+            margin: 8px 8px
+            font-size: 1.2em
             font-style: italic
-            width: 60%
-            color: $secondaryColor
+            width: 50%
+            color: $secondaryShadow
 
         .section__article
             @include flex
             position: relative
             height: 100vh
+            margin: 32px 0
 
-            .article__card
-                position: relative
+            .article__card--right
+                border-radius: 20px
+                position: absolute
+                height: 600px
+                left: 450px
+                bottom: 50px
+                overflow: hidden
+                box-shadow: 0 0 10px 5px $MainShadow
+                transition: 0.7s ease
 
-                .article__card--right
+                img
                     border-radius: 20px
-                    position: absolute
-                    left: 450px
-                    bottom: 50px
-                    box-shadow: 0 0 10px 5px $complementaryShadow
-                    transition: 0.5s ease-in
 
-                .article__card--left
+            .article__card--right::after
+                position: absolute
+                top: 0
+                display: block
+                content: 'asdasdasd'
+                text-align: start
+                font-size: 1.5em
+                font-weight: 300
+                color: $MainAccent
+                padding: 16px 75px
+                border-radius: 20px
+                height: 100%
+                width: 100%
+                background-color: #3f0fb7bb
+                transition: 0.8s ease
+
+
+            .article__card--left
+                border-radius: 20px
+                position: absolute
+                height: 600px
+                right: 450px
+                bottom: 50px
+                overflow: hidden
+                box-shadow: 0 0 10px 5px $MainShadow
+                transition: 0.7s ease
+                
+                img
                     border-radius: 20px
-                    position: absolute
-                    right: 450px
-                    bottom: 50px
-                    box-shadow: 0 0 10px 5px $complementaryShadow
-                    transition: 0.5s ease-in
 
-                .article__card--right:hover
-                    left: -450px
-                    box-shadow: 0 0 10px 5px $complementaryShadow
-                    z-index: 2
+            .article__card--left::after
+                position: absolute
+                top: 0
+                display: block
+                content: 'asdasdasd'
+                text-align: end
+                font-size: 1.5em
+                font-weight: 300
+                color: $MainAccent
+                padding: 16px 75px
+                border-radius: 20px
+                height: 100%
+                width: 100%
+                background-color: #3f0fb7bb
+                transition: 0.8s ease
 
-                .article__card--left:hover
-                    right: -450px
-                    box-shadow: 0 0 10px 5px $complementaryShadow
-                    z-index: 2
+            .article__card--right:hover
+                left: -450px
+                box-shadow: 0 0 10px 5px $MainShadow
+                z-index: 2
+
+            .article__card--right:hover::after
+                text-align: center
+                padding: 16px 0
+                height: 5%
+                border-bottom-left-radius: 0
+                border-bottom-right-radius: 0
+                background-color: #3f0fb788
+
+            .article__card--left:hover
+                right: -450px
+                box-shadow: 0 0 10px 5px $MainShadow
+                z-index: 2
+
+            .article__card--left:hover::after
+                text-align: center
+                padding: 16px 0
+                height: 5%
+                border-bottom-left-radius: 0
+                border-bottom-right-radius: 0
+                background-color: #3f0fb788
+
+.footer__nav
+    @include flex
+
+    position: absolute
+    bottom: 0
+    align-items: center
+    justify-content: center
+    padding: 16px 32px
+    background-color: $MainColor
+    width: 100%
+    text-align: center
+    height: 100px
+    z-index: 3
+    
+
+    .footer__text
+        color: $MainAccent
+
+.page__scroller
+    position: fixed
+    bottom: 32px
+    right: 8px
+    scroll-behavior: smooth
+    height: 50px
+    width: 50px
+    border-radius: 100%
+    color: $MainAccent
+    background-color: $MainShadow
+    cursor: pointer
+    z-index: 10
+
+    a
+        display: block
+
+
+/*ABOUT CSS*/
+.about__main
+    display: flex
+    justify-content: center
+    width: 100%
+    margin-top: 87.41px
+    padding: 32px 0 
+    background-color: $MainAccent
+
+    .about__container
+        display: flex
+        flex-direction: row
+        flex-wrap: nowrap
+        width: 90%
+         
+        justify-content: center
+        align-items: center
+
+        .about__photo
+            width: 40%
+            padding: 16px
+
+            img
+                height: 100%
+                width: 100%
+                border: $MainColor solid 2px
+
+        .about__section
+            display: flex
+            flex-direction: column
+            height: 100%
+            width: 50%
+            padding: 16px
+           
+
+            .about__tittle
+                font-size: 38px
+                margin: 32px 0 16px
+                color: $secondaryShadow
 
             
+            .about__text
+                margin: 16px 0
+                color: $secondaryShadow
+
+            .about__quote
+                font-style: italic
+                margin: 16px 0
+                padding-left: 16px
+                border-left: $secondaryColor solid 1px 
+                color: $secondaryShadow
+
+    .cv__download
+        margin-top: 64px
+        width: 100px
+        height: 45px
+        border: $MainColor solid 2px
+        text-align: center
+        cursor: pointer
+        transition: 0.2s linear
+    
+        a
+            display: block
+            color: $MainColor
+            padding: 18px 32px
+    
+    .cv__download:hover
+        background-color: $MainColor
+                        
+        a
+            color: $MainAccent
+
+    .cv__download:active
+        background-color: $secondaryColor
+        box-shadow: 0 0 5px 3px $MainColor
+
+        a
+            color: $MainShadow
+
+/*LOADINGSCREEN*/ 
+@keyframes spin
+    0%
+        transform: rotateZ(360deg)
+    100%
+        transform: rotateZ(0deg)
