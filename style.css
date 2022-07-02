@@ -134,30 +134,29 @@ a:-webkit-any-link {
   position: absolute;
   left: 72%;
   bottom: 20px;
-  transition: 0.5s ease-in;
 }
 .main .main__container .jumbotron .jumbotron__face .jumbotron__cta {
   visibility: hidden;
   font-size: 16px;
   background: none;
-  border: #4c26ac solid 3px;
+  border: #3f0fb7 solid 3px;
   cursor: pointer;
 }
 .main .main__container .jumbotron .jumbotron__face .jumbotron__cta a {
   display: block;
-  color: #4c26ac;
+  color: #3f0fb7;
   padding: 18px 32px;
 }
 .main .main__container .jumbotron .jumbotron__face .jumbotron__cta:hover {
-  background-color: #4c26ac;
-  border: #653fc5 solid 2px;
+  background-color: #3f0fb7;
+  border: #3f0fb7 solid 2px;
 }
 .main .main__container .jumbotron .jumbotron__face .jumbotron__cta:hover a {
   color: #ece7f8;
 }
 .main .main__container .jumbotron .jumbotron__face .jumbotron__cta:active {
   background-color: #4c26ac;
-  box-shadow: 0 0 5px 3px #3f0fb7;
+  box-shadow: 0 0 5px 3px #320c92;
 }
 .main .main__container .jumbotron .jumbotron__face .jumbotron__cta:active a {
   color: #320c92;
@@ -206,7 +205,7 @@ a:-webkit-any-link {
   color: #4c26ac;
 }
 .main .main__section .section__content {
-  margin: 8px 8px;
+  margin: 16px 16px;
   font-size: 1.2em;
   font-style: italic;
   width: 50%;
@@ -271,7 +270,7 @@ a:-webkit-any-link {
   font-size: 1.5em;
   font-weight: 300;
   color: #ece7f8;
-  padding: 16px 75px;
+  padding: 16px 0 0 25px;
   border-radius: 20px;
   height: 100%;
   width: 100%;
@@ -353,7 +352,7 @@ a:-webkit-any-link {
 .about__main .about__container {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   width: 90%;
   justify-content: center;
   align-items: center;
@@ -370,7 +369,6 @@ a:-webkit-any-link {
 .about__main .about__container .about__section {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 50%;
   padding: 16px;
 }
@@ -392,17 +390,15 @@ a:-webkit-any-link {
 }
 .about__main .cv__download {
   margin-top: 64px;
-  width: 100px;
-  height: 45px;
+  width: 125px;
   border: #3f0fb7 solid 2px;
-  text-align: center;
   cursor: pointer;
   transition: 0.2s linear;
 }
 .about__main .cv__download a {
   display: block;
+  padding: 16px 32px;
   color: #3f0fb7;
-  padding: 18px 32px;
 }
 .about__main .cv__download:hover {
   background-color: #3f0fb7;
@@ -433,5 +429,41 @@ a:-webkit-any-link {
   }
   100% {
     transform: rotateZ(0deg);
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .main .main__container .jumbotron .jumbotron__slide {
+    width: 100%;
+  }
+  .main .main__container .jumbotron:hover .jumbotron__slide {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+  }
+  .main .main__container .jumbotron:hover .jumbotron__face {
+    left: 35%;
+  }
+  .main .main__section .section__tittle {
+    font-size: 26px;
+    width: 80%;
+  }
+  .main .main__section .section__content {
+    font-size: 1em;
+    width: 75%;
+  }
+
+  .about__main .about__container .about__photo {
+    width: 90%;
+  }
+  .about__main .about__container .about__section {
+    width: 100%;
+  }
+  .about__main .about__container .about__section .about__tittle {
+    text-align: center;
+  }
+  .about__main .about__container .cv__download {
+    margin-left: auto;
+    margin-right: auto;
   }
 }/*# sourceMappingURL=style.css.map */
