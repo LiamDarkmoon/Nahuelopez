@@ -118,7 +118,7 @@ a:-webkit-any-link {
   position: relative;
   height: 76.9230769231vh;
   width: 100%;
-  background: url("../img/design.jpg") center;
+  background: url("img/design.jpg") center;
   align-items: center;
 }
 .main .main__container .jumbotron .jumbotron__slide {
