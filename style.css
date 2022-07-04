@@ -131,7 +131,7 @@ a:-webkit-any-link {
 }
 .main .main__container .jumbotron .jumbotron__face {
   position: absolute;
-  left: 72%;
+  left: 70%;
   bottom: 20px;
 }
 .main .main__container .jumbotron .jumbotron__face .jumbotron__cta {
@@ -450,7 +450,7 @@ a:-webkit-any-link {
     justify-content: start;
   }
   .main .main__container .jumbotron:hover .jumbotron__tittle {
-    font-size: 32px;
+    font-size: 26px;
   }
   .main .main__container .jumbotron:hover .jumbotron__face {
     left: 30%;
