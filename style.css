@@ -449,6 +449,9 @@ a:-webkit-any-link {
     height: 50%;
     justify-content: start;
   }
+  .main .main__container .jumbotron:hover .jumbotron__tittle {
+    font-size: 32px;
+  }
   .main .main__container .jumbotron:hover .jumbotron__face {
     left: 30%;
   }
