@@ -206,19 +206,25 @@ a:-webkit-any-link
         flex-direction: column
         width: 100%
         align-items: center
-        
 
-        .section__tittle
-            margin-top: 32px 
-            font-size: 2em
-            color: $secondaryShadow
+        .section__quote
+            display: flex
+            flex-direction: column
+            align-items: center
+            height: 200px
+            text-align: center
 
-        .section__content
-            margin: 16px 16px
-            font-size: 1.2em
-            font-style: italic
-            color: $secondaryShadow
-            width: 50%
+            .section__tittle
+                margin-top: 32px 
+                font-size: 2em
+                color: $secondaryShadow
+
+            .section__content
+                margin: 16px 16px
+                font-size: 1.2em
+                font-style: italic
+                color: $secondaryShadow
+                width: 50%
 
         .section__article
             @include flex
@@ -230,12 +236,12 @@ a:-webkit-any-link
             .article__column
                 display: flex
                 flex-direction: column
-                height: 1000px
+                height: 1200px
                 width: 50%
 
                 .article__card
                     border-radius: 5px
-                    height: 250px
+                    height: 335px
                     margin: 16px
                     transition: 1s ease
                     border: $MainAccent solid 1px
@@ -246,18 +252,26 @@ a:-webkit-any-link
 
                 .card__tittle
                     display: grid
-                    place-items: center
+                    align-content: center
                     font-size: 32px
+                    font-weight: bold
                     height: 100%
                     padding: 16px
                     color: $MainAccent
                     background-color: #653fc5ef
                     border-radius: 5px
+                    width: 25%
                     visibility: hidden
+                    transition: 0.8s ease-in-out
+
+                    i
+                        margin: 8px
+                        font-size: 60px
                 
                 .article__card:hover
                     .card__tittle
                         visibility: visible
+                        width: 100%
 
 .footer__nav
     @include flex
@@ -284,6 +298,7 @@ a:-webkit-any-link
     height: 50px
     width: 50px
     border-radius: 100%
+    border: $MainAccent solid 1px    
     color: $MainAccent
     background-color: $MainShadow
     cursor: pointer
@@ -402,6 +417,11 @@ a:-webkit-any-link
             .section__content
                 font-size: 1em
                 width: 75%
+                
+            .section__article
+                .article__column
+                    .article__card
+                        height: 150px
 
 
     .about__main
@@ -461,6 +481,10 @@ a:-webkit-any-link
 
                 .article__column
                     width: 100%
+                    height: 700px
+
+                    .article__card
+                        height: 200px
 
 
     .about__main

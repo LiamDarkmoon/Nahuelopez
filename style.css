@@ -200,12 +200,19 @@ a:-webkit-any-link {
   width: 100%;
   align-items: center;
 }
-.main .main__section .section__tittle {
+.main .main__section .section__quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  text-align: center;
+}
+.main .main__section .section__quote .section__tittle {
   margin-top: 32px;
   font-size: 2em;
   color: #4c26ac;
 }
-.main .main__section .section__content {
+.main .main__section .section__quote .section__content {
   margin: 16px 16px;
   font-size: 1.2em;
   font-style: italic;
@@ -224,12 +231,12 @@ a:-webkit-any-link {
 .main .main__section .section__article .article__column {
   display: flex;
   flex-direction: column;
-  height: 1000px;
+  height: 1200px;
   width: 50%;
 }
 .main .main__section .section__article .article__column .article__card {
   border-radius: 5px;
-  height: 250px;
+  height: 335px;
   margin: 16px;
   transition: 1s ease;
   border: #ece7f8 solid 1px;
@@ -240,17 +247,25 @@ a:-webkit-any-link {
 }
 .main .main__section .section__article .article__column .card__tittle {
   display: grid;
-  place-items: center;
+  align-content: center;
   font-size: 32px;
+  font-weight: bold;
   height: 100%;
   padding: 16px;
   color: #ece7f8;
   background-color: rgba(101, 63, 197, 0.937254902);
   border-radius: 5px;
+  width: 25%;
   visibility: hidden;
+  transition: 0.8s ease-in-out;
+}
+.main .main__section .section__article .article__column .card__tittle i {
+  margin: 8px;
+  font-size: 60px;
 }
 .main .main__section .section__article .article__column .article__card:hover .card__tittle {
   visibility: visible;
+  width: 100%;
 }
 
 .footer__nav {
@@ -280,6 +295,7 @@ a:-webkit-any-link {
   height: 50px;
   width: 50px;
   border-radius: 100%;
+  border: #ece7f8 solid 1px;
   color: #ece7f8;
   background-color: #320c92;
   cursor: pointer;
@@ -403,6 +419,9 @@ a:-webkit-any-link {
     font-size: 1em;
     width: 75%;
   }
+  .main .main__section .section__article .article__column .article__card {
+    height: 150px;
+  }
 
   .about__main .about__container .about__photo {
     width: 95%;
@@ -452,6 +471,10 @@ a:-webkit-any-link {
   }
   .main .main__section .section__article .article__column {
     width: 100%;
+    height: 700px;
+  }
+  .main .main__section .section__article .article__column .article__card {
+    height: 200px;
   }
 
   .about__main .about__container .about__photo {
