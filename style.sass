@@ -105,6 +105,9 @@ a:-webkit-any-link
     background-color: $MainAccent
     justify-content: center
 
+    .gutter__top
+        padding-top: 40px
+
     .main__container
         display: flex
         flex-direction: column
@@ -142,6 +145,7 @@ a:-webkit-any-link
                     visibility: hidden
                     font-size: 16px
                     background: none
+                    border-radius: 5px
                     border: $MainAccent solid 3px
                     cursor: pointer
                     
@@ -212,7 +216,7 @@ a:-webkit-any-link
             flex-direction: column
             align-items: center
             height: 200px
-            text-align: center
+            text-align: center 
 
             .section__tittle
                 margin-top: 32px 
@@ -221,10 +225,14 @@ a:-webkit-any-link
 
             .section__content
                 margin: 16px 16px
+                padding-left: 24px
+                padding-right: 24px      
                 font-size: 1.2em
                 font-style: italic
                 color: $secondaryShadow
                 width: 50%
+                border-left: $MainShadow solid 1px
+                border-right: $MainShadow solid 1px
 
         .section__article
             @include flex
@@ -240,6 +248,7 @@ a:-webkit-any-link
                 width: 50%
 
                 .article__card
+                    position: relative
                     border-radius: 5px
                     height: 335px
                     margin: 16px
@@ -248,9 +257,13 @@ a:-webkit-any-link
                     background: url('img/design.jpg')
                 
                     img
+                        height: 100%
+                        width: 100%
                         border-radius: 5px
 
                 .card__tittle
+                    position: absolute
+                    top: 0
                     display: grid
                     align-content: center
                     font-size: 32px
@@ -260,10 +273,9 @@ a:-webkit-any-link
                     color: $MainAccent
                     background-color: #653fc5ef
                     border-radius: 5px
-                    width: 25%
+                    width: 100%
                     visibility: hidden
-                    transition: 0.8s ease-in-out
-
+                    
                     i
                         margin: 8px
                         font-size: 60px
@@ -271,7 +283,6 @@ a:-webkit-any-link
                 .article__card:hover
                     .card__tittle
                         visibility: visible
-                        width: 100%
 
 .footer__nav
     @include flex
@@ -358,9 +369,23 @@ a:-webkit-any-link
                 border-left: $secondaryColor solid 1px 
                 color: $secondaryShadow
 
+            .social
+                width: 50px
+                padding: 16px 32px 16px 22px
+                margin: 8px 0
+                border-radius: 5px
+                border: $MainColor solid 2px
+                cursor: pointer
+                color: $MainColor
+
+            .social:hover
+                background-color: $MainColor
+                color: $MainAccent
+
     .cv__download
-        margin-top: 64px
+        margin: 56px 0 32px 0
         width: 125px
+        border-radius: 5px
         border: $MainColor solid 2px
         cursor: pointer
         transition: 0.2s linear

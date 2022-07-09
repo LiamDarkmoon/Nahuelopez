@@ -101,6 +101,9 @@ a:-webkit-any-link {
   background-color: #ece7f8;
   justify-content: center;
 }
+.main .gutter__top {
+  padding-top: 40px;
+}
 .main .main__container {
   display: flex;
   flex-direction: column;
@@ -138,6 +141,7 @@ a:-webkit-any-link {
   visibility: hidden;
   font-size: 16px;
   background: none;
+  border-radius: 5px;
   border: #ece7f8 solid 3px;
   cursor: pointer;
 }
@@ -214,10 +218,14 @@ a:-webkit-any-link {
 }
 .main .main__section .section__quote .section__content {
   margin: 16px 16px;
+  padding-left: 24px;
+  padding-right: 24px;
   font-size: 1.2em;
   font-style: italic;
   color: #4c26ac;
   width: 50%;
+  border-left: #320c92 solid 1px;
+  border-right: #320c92 solid 1px;
 }
 .main .main__section .section__article {
   display: flex;
@@ -235,6 +243,7 @@ a:-webkit-any-link {
   width: 50%;
 }
 .main .main__section .section__article .article__column .article__card {
+  position: relative;
   border-radius: 5px;
   height: 335px;
   margin: 16px;
@@ -243,9 +252,13 @@ a:-webkit-any-link {
   background: url("img/design.jpg");
 }
 .main .main__section .section__article .article__column .article__card img {
+  height: 100%;
+  width: 100%;
   border-radius: 5px;
 }
 .main .main__section .section__article .article__column .card__tittle {
+  position: absolute;
+  top: 0;
   display: grid;
   align-content: center;
   font-size: 32px;
@@ -255,9 +268,8 @@ a:-webkit-any-link {
   color: #ece7f8;
   background-color: rgba(101, 63, 197, 0.937254902);
   border-radius: 5px;
-  width: 25%;
+  width: 100%;
   visibility: hidden;
-  transition: 0.8s ease-in-out;
 }
 .main .main__section .section__article .article__column .card__tittle i {
   margin: 8px;
@@ -265,7 +277,6 @@ a:-webkit-any-link {
 }
 .main .main__section .section__article .article__column .article__card:hover .card__tittle {
   visibility: visible;
-  width: 100%;
 }
 
 .footer__nav {
@@ -354,9 +365,23 @@ a:-webkit-any-link {
   border-left: #653fc5 solid 1px;
   color: #4c26ac;
 }
+.about__main .about__container .about__section .social {
+  width: 50px;
+  padding: 16px 32px 16px 22px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: #3f0fb7 solid 2px;
+  cursor: pointer;
+  color: #3f0fb7;
+}
+.about__main .about__container .about__section .social:hover {
+  background-color: #3f0fb7;
+  color: #ece7f8;
+}
 .about__main .cv__download {
-  margin-top: 64px;
+  margin: 56px 0 32px 0;
   width: 125px;
+  border-radius: 5px;
   border: #3f0fb7 solid 2px;
   cursor: pointer;
   transition: 0.2s linear;
