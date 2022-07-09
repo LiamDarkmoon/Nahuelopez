@@ -215,7 +215,6 @@ a:-webkit-any-link
             display: flex
             flex-direction: column
             align-items: center
-            height: 200px
             text-align: center 
 
             .section__tittle
@@ -231,8 +230,6 @@ a:-webkit-any-link
                 font-style: italic
                 color: $secondaryShadow
                 width: 50%
-                border-left: $MainShadow solid 1px
-                border-right: $MainShadow solid 1px
 
         .section__article
             @include flex
@@ -275,6 +272,11 @@ a:-webkit-any-link
                     border-radius: 5px
                     width: 100%
                     visibility: hidden
+
+                    a
+                        display: block
+                        width: 100%
+                        height: 100%
                     
                     i
                         margin: 8px
@@ -283,6 +285,9 @@ a:-webkit-any-link
                 .article__card:hover
                     .card__tittle
                         visibility: visible
+
+                .visible
+                    visibility: visible
 
 .footer__nav
     @include flex
